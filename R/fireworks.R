@@ -16,10 +16,11 @@ useFireworks <- function() {
 #' Add fireworks div
 #'
 #' @param id The id of the fireworks div
-#' @param ... Additional arguments to pass to the fireworks function
+#' @param options A list of options to pass to the fireworks
+#' @importFrom jsonlite toJSON
 #' @export
 
-fireworks <- function(id, ...) {
+fireworks <- function(id, options = list()) {
 
   fireworksTag <- withTags(
     div(id = id,
@@ -28,10 +29,11 @@ fireworks <- function(id, ...) {
           sprintf(
             "$(document).ready(function() {
                 const container = document.getElementById('%s')
-                const fireworks = new Fireworks.default(container, {})
+                const fireworks = new Fireworks.default(container, %s)
                 fireworks.start()
               });",
-            id
+            id,
+            jsonlite::toJSON(options, auto_unbox = TRUE)
           )
         ))
   )
@@ -61,23 +63,26 @@ Fireworks <- R6::R6Class(
     #' @param id Id, or vector of ids, of element on which to display the fireworks, if \code{NULL} the fireworks show
     #' will be an overlay on the full HTML document.
     #' @param session The Shiny session
+    #' @param options A list of options to pass to the fireworks
     #' @examples
     #' \dontrun{Fireworks$new()}
-    initialize = function(id = NULL, session = shiny::getDefaultReactiveDomain()){
+    initialize = function(id = NULL, session = shiny::getDefaultReactiveDomain(), options = list()){
       private$.id <- id
       private$.session <- session
+      private$.options <- options
     },
     #' @details
     #' Start fireworks.
     start = function(){
       if (is.null(private$.id)) {
-        private$.session$sendCustomMessage("fireworks-start", list())
+        private$.session$sendCustomMessage("fireworks-start", list(options = private$.options))
       } else {
         for (i in 1:length(private$.id)) {
-          opts <- list(
-            id = private$.id[[i]]
+          msg <- list(
+            id = private$.id[[i]],
+            options = private$.options[[i]]
           )
-          private$.session$sendCustomMessage("fireworks-start", opts)
+          private$.session$sendCustomMessage("fireworks-start", msg)
         }
       }
       invisible(self)
@@ -97,6 +102,7 @@ Fireworks <- R6::R6Class(
   ),
   private = list(
     .id = NULL,
-    .session = NULL
+    .session = NULL,
+    .options = NULL
   )
 )

@@ -12,7 +12,7 @@ Shiny.addCustomMessageHandler("fireworks-start", function(message) {
     container = document.getElementById(message.id);
   }
 
-  const fireworks = new Fireworks.default(container);
+  const fireworks = new Fireworks.default(container, message.options);
   fireworks.start();
 
   // make fireworks available outside of this function

@@ -9,7 +9,7 @@ fireworks(id, ...)
 \arguments{
 \item{id}{The id of the fireworks div}
 
-\item{...}{Additional arguments to pass to the fireworks function}
+\item{options}{A list of options to pass to the fireworks}
 }
 \description{
 Add fireworks div

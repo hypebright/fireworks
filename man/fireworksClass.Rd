@@ -34,7 +34,11 @@ the fireworks show, and \code{stop} the fireworks show.
 \if{latex}{\out{\hypertarget{method-fireworks-new}{}}}
 \subsection{Method \code{new()}}{
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Fireworks$new(id = NULL)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Fireworks$new(
+  id = NULL,
+  session = shiny::getDefaultReactiveDomain(),
+  options = list()
+)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
@@ -42,6 +46,10 @@ the fireworks show, and \code{stop} the fireworks show.
 \describe{
 \item{\code{id}}{Id, or vector of ids, of element on which to display the fireworks, if \code{NULL} the fireworks show
 will be an overlay on the full HTML document.}
+
+\item{\code{session}}{The Shiny session}
+
+\item{\code{options}}{A list of options to pass to the fireworks}
 }
 \if{html}{\out{</div>}}
 }

@@ -1,10 +1,12 @@
 # fireworks <img src="./inst/images/fireworks.png" width="200px" align="right"/>
 
 <!-- badges: start -->
+
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+
 <!-- badges: end -->
 
-Wrapper around the [fireworks-js](https://fireworks.js.org) lib that can be used in Shiny ✨,
+Wrapper around the [fireworks-js](https://fireworks.js.org) lib that can be used in Shiny ✨
 
 ## Installation
 
@@ -28,7 +30,7 @@ ui <-
   fluidPage(
     titlePanel("Fireworks in Shiny!"),
     mainPanel(
-      fireworks()
+      fireworks(id = "myFireworks")
     )
   )
 
@@ -67,3 +69,17 @@ server <- function(input, output, session) {
 
 shinyApp(ui, server)
 ```
+
+## Options
+
+You can pass options to  `fireworks()` and `Fireworks$new()` to customize the fireworks. A full list of options can be found on the [fireworks-js GitHub page](https://github.com/crashmax-dev/fireworks-js/?tab=readme-ov-file#options).
+
+For example:
+
+```r
+fireworks(id = "myFireWorks",
+          options = list(hue = list(min = 0, max = 45),
+                         explosion = 10,
+                         traceSpeed = 5))
+```
+

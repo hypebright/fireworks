@@ -13,7 +13,9 @@ ui <-
 
 server <- function(input, output, session) {
 
-  fw <- Fireworks$new()
+  fw <- Fireworks$new(options = list(hue = list(min = 0, max = 45),
+                                     explosion = 10,
+                                     traceSpeed = 5))
 
   observe({
     fw$start()
