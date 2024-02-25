@@ -1,3 +1,10 @@
 ^fireworks\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE\.md$
+^srcjs$
+^node_modules$
+^package\.json$
+^package-lock\.json$
+^styles$
+^esbuild\.dev\.json$
+^esbuild\.prod\.json$
