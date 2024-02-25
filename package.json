@@ -1,0 +1,29 @@
+{
+  "name": "fireworks",
+  "version": "0.1",
+  "description": "",
+  "private": true,
+  "main": "'main.js'",
+  "directories": {
+    "man": "man"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "mocha srcjs/test",
+    "build-dev": "node esbuild.dev.js",
+    "build-prod": "node esbuild.prod.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GPL (>= 3)",
+  "devDependencies": {
+    "autoprefixer": "^10.4.17",
+    "esbuild": "^0.19.12",
+    "esbuild-sass-plugin": "^2.16.1",
+    "mocha": "^8.3.0",
+    "postcss": "^8.4.35"
+  },
+  "dependencies": {
+    "fireworks-js": "^2.10.7"
+  }
+}
