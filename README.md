@@ -39,7 +39,9 @@ server <- function(input, output) {}
 shinyApp(ui, server)
 ```
 
-Launching and stopping fireworks from the server:
+In this case, the fireworks is a `<div>` with a specified width and height.
+
+To use fireworks as a full screen overlay or an specific existing HTML element, you can launch and stop fireworks from the server:
 
 ``` r
 library(shiny)
@@ -55,6 +57,7 @@ ui <-
   
 server <- function(input, output, session) {
 
+  # when no id given, fireworks will be a full screen overlay
   fw <- Fireworks$new()
 
   observe({
@@ -70,6 +73,43 @@ server <- function(input, output, session) {
 shinyApp(ui, server)
 ```
 
+To add fireworks to an individual element, you can use the `id` argument:
+
+``` r
+library(shiny)
+library(fireworks)
+
+ui <-
+  fluidPage(
+    tags$title("Fireworks 🎆"),
+    tags$h2("Fireworks in Shiny!"),
+    useFireworks(),
+    actionButton("launch", "Launch Fireworks"),
+    plotOutput("plot", width = "100%", height = "400px"),
+  )
+  
+server <- function(input, output, session) {
+
+  fw <- Fireworks$new(id = "plot",
+                      options = list(hue = list(min = 0, max = 45),
+                                     explosion = 10,
+                                     traceSpeed = 5))
+
+  output$plot <- renderPlot({
+    plot(cars)
+  })
+
+  observe({
+    fw$start()
+    Sys.sleep(3)
+    fw$stop()
+  }) |> bindEvent(input$launch)
+
+}
+
+shinyApp(ui, server)
+```
+
 ## Options
 
 You can pass options to  `fireworks()` and `Fireworks$new()` to customize the fireworks. A full list of options can be found on the [fireworks-js GitHub page](https://github.com/crashmax-dev/fireworks-js/?tab=readme-ov-file#options).
@@ -77,9 +117,16 @@ You can pass options to  `fireworks()` and `Fireworks$new()` to customize the fi
 For example:
 
 ```r
-fireworks(id = "myFireWorks",
+fireworks(id = "myFireworks",
           options = list(hue = list(min = 0, max = 45),
                          explosion = 10,
                          traceSpeed = 5))
 ```
 
+or:
+
+```r
+fw <- Fireworks$new(options = list(hue = list(min = 0, max = 45),
+                                   explosion = 10,
+                                   traceSpeed = 5))
+```

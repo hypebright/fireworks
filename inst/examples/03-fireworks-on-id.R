@@ -34,13 +34,13 @@ server <- function(input, output, session) {
 
   observe({
     fw$start()
-    Sys.sleep(5)
+    Sys.sleep(3)
     fw$stop()
   }) |> bindEvent(input$launch)
 
   observe({
     fw2$start()
-    Sys.sleep(5)
+    Sys.sleep(3)
     fw2$stop()
   }) |> bindEvent(input$launch2)
 
