@@ -5,7 +5,7 @@ Authors@R:
     person("Veerle", "van Leemput", , "veerle@hypebright.nl", role = c("aut", "cre"))
 Description: 'fireworks' is a wrapper around the 'fireworks-js' library that contains
     ready to use fireworks components for web development frameworks like Vue3 and React.
-License: GPL (>= 3)
+License: MIT + file LICENSE
 BugReports: https://github.com/hypebright/fireworks/issues
 Imports: 
     htmltools,
