@@ -68,6 +68,7 @@ Fireworks <- R6::R6Class(
     #' will be an overlay on the full HTML document.
     #' @param session The Shiny session
     #' @param options A list of options to pass to the fireworks
+    #' @importFrom shiny getDefaultReactiveDomain
     #' @examples
     #' \dontrun{Fireworks$new()}
     initialize = function(id = NULL, session = shiny::getDefaultReactiveDomain(), options = list()){
