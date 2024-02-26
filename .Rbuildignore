@@ -8,3 +8,6 @@
 ^styles$
 ^esbuild\.dev\.json$
 ^esbuild\.prod\.json$
+^esbuild\.dev\.js$
+^esbuild\.prod\.js$
+^\.github$
