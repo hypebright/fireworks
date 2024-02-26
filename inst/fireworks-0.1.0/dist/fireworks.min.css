@@ -1,1 +1,1 @@
-.fireworks-overlay{position:fixed;left:0;width:100%;z-index:9999;pointer-events:none}.fireworks-full-screen{top:0;height:100%}
+.fireworks-overlay{position:absolute;left:0;width:100%;z-index:9999;pointer-events:none}.fireworks-full-screen{top:0;height:100%}
