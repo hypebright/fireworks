@@ -5,7 +5,7 @@ ui <-
   fluidPage(
     tags$head(tags$style(HTML("body {background-color: black}"))),
     tags$title("Fireworks 🎆"),
-    tags$h2("Fireworks in Shiny!", style = "color: white; text-align: center;"),
+    tags$h2("Full screen fireworks in Shiny!", style = "color: white; text-align: center;"),
     useFireworks(),
     actionButton("launch", "Launch fireworks"),
     actionButton("stop", "Stop fireworks")

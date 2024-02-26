@@ -6,7 +6,7 @@ Shiny.addCustomMessageHandler("fireworks-start", function(message) {
 
   if (message.id == null) {
     container = document.createElement("div");
-    container.classList.add("fireworks-overlay");
+    container.classList.add("fireworks-overlay", "fireworks-full-screen");
     // append container to document
     document.body.appendChild(container);
   } else {
@@ -14,6 +14,12 @@ Shiny.addCustomMessageHandler("fireworks-start", function(message) {
   }
 
   const fireworks = new Fireworks.default(container, message.options);
+
+  // if fireworks are on id, add fireworks-overlay class to canvas tag
+  if (message.id != null) {
+    fireworks.canvas.classList.add("fireworks-overlay");
+  }
+
   fireworks.start();
 
   // make fireworks available outside of this function
@@ -24,6 +30,6 @@ Shiny.addCustomMessageHandler("fireworks-start", function(message) {
 Shiny.addCustomMessageHandler("fireworks-stop", function(message) {
   window.fireworks.stop();
   if (message.id == null) {
-    document.body.removeChild(document.querySelector(".fireworks-overlay"));
+    document.body.removeChild(document.querySelector(".fireworks-full-screen"));
   }
 });
