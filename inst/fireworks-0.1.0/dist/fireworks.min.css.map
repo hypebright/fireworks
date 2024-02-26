@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../styles/Users/veerlevanleemput/Documents/Hypebright BV/lab/fireworks/styles/main.scss", "../../../styles/%3Cinput%20css%20wzjv0V%3E"],
+  "sourcesContent": [".fireworks-overlay {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 9999; // Ensure it's on top of other elements\n  pointer-events: none; // Allows pointer events to pass through\n}\n\n", ".fireworks-overlay {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 9999;\n  pointer-events: none;\n}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL1VzZXJzL3ZlZXJsZXZhbmxlZW1wdXQvRG9jdW1lbnRzL0h5cGVicmlnaHQgQlYvbGFiL2ZpcmV3b3Jrcy9zdHlsZXMiLCJzb3VyY2VzIjpbIm1haW4uc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBIiwic291cmNlc0NvbnRlbnQiOlsiLmZpcmV3b3Jrcy1vdmVybGF5IHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICB0b3A6IDA7XG4gIGxlZnQ6IDA7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG4gIHotaW5kZXg6IDk5OTk7IC8vIEVuc3VyZSBpdCdzIG9uIHRvcCBvZiBvdGhlciBlbGVtZW50c1xuICBwb2ludGVyLWV2ZW50czogbm9uZTsgLy8gQWxsb3dzIHBvaW50ZXIgZXZlbnRzIHRvIHBhc3MgdGhyb3VnaFxufVxuXG4iXX0= */"],
+  "mappings": "AAAA,CAAA,kBACE,SAAA,MACA,IAAA,EACA,KAAA,EACA,MAAA,KACA,OAAA,KACA,QAAA,KACA,eAAA,ICCF",
+  "names": []
+}

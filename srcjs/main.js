@@ -1,4 +1,5 @@
 import "../node_modules/fireworks-js/dist/index.umd.js";
+import "../styles/main.scss";
 
 Shiny.addCustomMessageHandler("fireworks-start", function(message) {
   let container;
