@@ -4,7 +4,7 @@
 \alias{fireworks}
 \title{Add fireworks div}
 \usage{
-fireworks(id, width = "100\%", height = "100\%", options = list())
+fireworks(id, width = "100\%", height = "400px", options = list())
 }
 \arguments{
 \item{id}{The id of the fireworks div}

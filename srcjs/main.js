@@ -3,14 +3,17 @@ import "../styles/main.scss";
 
 Shiny.addCustomMessageHandler("fireworks-start", function(message) {
   let container;
+  let identifier;
 
   if (message.id == null) {
     container = document.createElement("div");
     container.classList.add("fireworks-overlay", "fireworks-full-screen");
     // append container to document
     document.body.appendChild(container);
+    identifier = "full-screen";
   } else {
     container = document.getElementById(message.id);
+    identifier = message.id;
   }
 
   const fireworks = new Fireworks.default(container, message.options);
@@ -23,13 +26,15 @@ Shiny.addCustomMessageHandler("fireworks-start", function(message) {
   fireworks.start();
 
   // make fireworks available outside of this function
-  window.fireworks = fireworks;
+  window[`fireworks-${identifier}`] = fireworks;
 });
 
-
 Shiny.addCustomMessageHandler("fireworks-stop", function(message) {
-  window.fireworks.stop();
+  const identifier = message.id == null ? "full-screen" : message.id;
+  window[`fireworks-${identifier}`].stop();
+
   if (message.id == null) {
     document.body.removeChild(document.querySelector(".fireworks-full-screen"));
   }
 });
+
