@@ -1,5 +1,6 @@
 #' Add fireworks dependencies
 #'
+#' @importFrom htmltools withTags
 #' @return A tagList with the fireworks dependencies
 #' @export
 
@@ -18,6 +19,7 @@ useFireworks <- function() {
 #' @param id The id of the fireworks div
 #' @param options A list of options to pass to the fireworks
 #' @importFrom jsonlite toJSON
+#' @importFrom htmltools withTags
 #' @export
 
 fireworks <- function(id, options = list()) {
