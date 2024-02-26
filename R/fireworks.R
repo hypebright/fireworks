@@ -18,14 +18,16 @@ useFireworks <- function() {
 #'
 #' @param id The id of the fireworks div
 #' @param options A list of options to pass to the fireworks
+#' @param width,height The width and height of the fireworks, either in pixels (e.g. '100px') or percent (e.g. '100%')
 #' @importFrom jsonlite toJSON
 #' @importFrom htmltools withTags
 #' @export
 
-fireworks <- function(id, options = list()) {
+fireworks <- function(id, width = "100%", height = "400px", options = list()) {
 
   fireworksTag <- withTags(
     div(id = id,
+        style = sprintf("width: %s; height: %s;", width, height),
         class = "fireworks",
         script(
           sprintf(

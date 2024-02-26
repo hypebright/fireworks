@@ -4,10 +4,12 @@
 \alias{fireworks}
 \title{Add fireworks div}
 \usage{
-fireworks(id, options = list())
+fireworks(id, width = "100\%", height = "100\%", options = list())
 }
 \arguments{
 \item{id}{The id of the fireworks div}
+
+\item{width, height}{The width and height of the fireworks, either in pixels (e.g. '100px') or percent (e.g. '100\%')}
 
 \item{options}{A list of options to pass to the fireworks}
 }
