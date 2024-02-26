@@ -18,6 +18,10 @@ pak::pak("hypebright/fireworks")
 
 ## Usage
 
+Fireworks in Shiny, how cool is that? ✨🎆 
+
+![](./inst/images/fireworks.gif)
+
 You can add `fireworks` in the UI, or you can launch and stop fireworks from the server. Examples can be found in `/inst/examples`.
 
 Calling `fireworks()` in the UI:
