@@ -84,7 +84,7 @@ Fireworks <- R6::R6Class(
         for (i in 1:length(private$.id)) {
           msg <- list(
             id = private$.id[[i]],
-            options = private$.options[[i]]
+            options = private$.options
           )
           private$.session$sendCustomMessage("fireworks-start", msg)
         }
