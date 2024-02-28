@@ -6,7 +6,7 @@
 [![R-CMD-check](https://github.com/hypebright/fireworks/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/hypebright/fireworks/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-Wrapper around the [fireworks-js](https://fireworks.js.org) lib that can be used in Shiny ✨
+Wrapper around the [fireworks-js](https://fireworks.js.org) lib that can be used in Shiny ✨. Full screen overlay or specific HTML elements, you choose!
 
 ## Installation
 
@@ -45,7 +45,7 @@ shinyApp(ui, server)
 
 In this case, the fireworks is a `<div>` with a specified width and height.
 
-To use fireworks as a full screen overlay or an specific existing HTML element, you can launch and stop fireworks from the server:
+To use fireworks as a full screen overlay or an specific existing HTML element, you can launch and stop fireworks from the server. Don't forget to attach dependencies with `useFireworks()`:
 
 ``` r
 library(shiny)
@@ -94,10 +94,7 @@ ui <-
   
 server <- function(input, output, session) {
 
-  fw <- Fireworks$new(id = "plot",
-                      options = list(hue = list(min = 0, max = 45),
-                                     explosion = 10,
-                                     traceSpeed = 5))
+  fw <- Fireworks$new(id = "plot")
 
   output$plot <- renderPlot({
     plot(cars)
@@ -134,3 +131,10 @@ fw <- Fireworks$new(options = list(hue = list(min = 0, max = 45),
                                    explosion = 10,
                                    traceSpeed = 5))
 ```
+
+## Acknowledgements
+
+As this is a wrapper around an existing library, I want to give credit to the original authors:
+
+- [fireworks-js](https://fireworks.js.org)
+- [Vitalij Ryndin](https://crashmax.ru)
