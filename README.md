@@ -132,6 +132,18 @@ fw <- Fireworks$new(options = list(hue = list(min = 0, max = 45),
                                    traceSpeed = 5))
 ```
 
+### Natural stop effect
+
+By default, fireworks are removed immediately when `stop` is called. You can add a natural stop effect by setting `fadeOut = TRUE`:
+
+```r
+fw$stop(fadeOut = TRUE)
+```
+
+The effects takes 2000ms and looks changes the intensity of the fireworks down to 1:
+
+![](./inst/images/fireworks-fadeout.gif)
+
 ## Acknowledgements
 
 As this is a wrapper around an existing library, I want to give credit to the original authors:
