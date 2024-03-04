@@ -31,10 +31,28 @@ Shiny.addCustomMessageHandler("fireworks-start", function(message) {
 
 Shiny.addCustomMessageHandler("fireworks-stop", function(message) {
   const identifier = message.id == null ? "full-screen" : message.id;
-  window[`fireworks-${identifier}`].stop();
+  const currentOpts = window[`fireworks-${identifier}`].currentOptions;
 
-  if (message.id == null) {
-    document.body.removeChild(document.querySelector(".fireworks-full-screen"));
+  const stopFireworks = () => {
+    window[`fireworks-${identifier}`].stop();
+    if (message.id == null) {
+      document.body.removeChild(
+        document.querySelector(".fireworks-full-screen")
+      );
+    }
+  };
+
+  if (message.fadeOut) {
+    window[`fireworks-${identifier}`].updateOptions({
+      ...currentOpts,
+      intensity: 1
+    });
+    // add 2000 ms delay to allow fireworks to fade out
+    setTimeout(() => {
+      stopFireworks();
+    }, 2000);
+  } else {
+    stopFireworks();
   }
 });
 

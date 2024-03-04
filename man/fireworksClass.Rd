@@ -23,15 +23,15 @@ the fireworks show, and \code{stop} the fireworks show.
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-fireworks-new}{\code{Fireworks$new()}}
-\item \href{#method-fireworks-start}{\code{Fireworks$start()}}
-\item \href{#method-fireworks-stop}{\code{Fireworks$stop()}}
-\item \href{#method-fireworks-clone}{\code{Fireworks$clone()}}
+\item \href{#method-Fireworks-new}{\code{Fireworks$new()}}
+\item \href{#method-Fireworks-start}{\code{Fireworks$start()}}
+\item \href{#method-Fireworks-stop}{\code{Fireworks$stop()}}
+\item \href{#method-Fireworks-clone}{\code{Fireworks$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-fireworks-new"></a>}}
-\if{latex}{\out{\hypertarget{method-fireworks-new}{}}}
+\if{html}{\out{<a id="method-Fireworks-new"></a>}}
+\if{latex}{\out{\hypertarget{method-Fireworks-new}{}}}
 \subsection{Method \code{new()}}{
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Fireworks$new(
@@ -67,8 +67,8 @@ Create fireworks.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-fireworks-start"></a>}}
-\if{latex}{\out{\hypertarget{method-fireworks-start}{}}}
+\if{html}{\out{<a id="method-Fireworks-start"></a>}}
+\if{latex}{\out{\hypertarget{method-Fireworks-start}{}}}
 \subsection{Method \code{start()}}{
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Fireworks$start()}\if{html}{\out{</div>}}
@@ -80,21 +80,29 @@ Start fireworks.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-fireworks-stop"></a>}}
-\if{latex}{\out{\hypertarget{method-fireworks-stop}{}}}
+\if{html}{\out{<a id="method-Fireworks-stop"></a>}}
+\if{latex}{\out{\hypertarget{method-Fireworks-stop}{}}}
 \subsection{Method \code{stop()}}{
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Fireworks$stop()}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Fireworks$stop(fadeOut = FALSE)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{fadeOut}}{Whether to fade out the fireworks before stopping. Note that
+this will take 2000ms to complete.}
+}
+\if{html}{\out{</div>}}
+}
 \subsection{Details}{
 Stop the fireworks
 }
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-fireworks-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-fireworks-clone}{}}}
+\if{html}{\out{<a id="method-Fireworks-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-Fireworks-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{
