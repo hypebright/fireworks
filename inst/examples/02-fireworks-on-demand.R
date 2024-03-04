@@ -22,7 +22,7 @@ server <- function(input, output, session) {
   }) |> bindEvent(input$launch)
 
   observe({
-    fw$stop()
+    fw$stop(fadeOut = TRUE)
   }) |> bindEvent(input$stop)
 
 }

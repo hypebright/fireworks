@@ -94,12 +94,15 @@ Fireworks <- R6::R6Class(
     },
     #' @details
     #' Stop the fireworks
-    stop = function(){
+    #' @param fadeOut Whether to fade out the fireworks before stopping. Note that
+    #' this will take 2000ms to complete.
+    stop = function(fadeOut = FALSE){
       if (is.null(private$.id)) {
-        private$.session$sendCustomMessage("fireworks-stop", list())
+        private$.session$sendCustomMessage("fireworks-stop", list(fadeOut = fadeOut))
       } else {
         for (i in 1:length(private$.id)) {
-          private$.session$sendCustomMessage("fireworks-stop", list(id = private$.id[[i]]))
+          private$.session$sendCustomMessage("fireworks-stop", list(id = private$.id[[i]],
+                                                                    fadeOut = fadeOut))
         }
       }
       invisible(self)

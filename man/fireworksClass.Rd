@@ -84,9 +84,17 @@ Start fireworks.
 \if{latex}{\out{\hypertarget{method-Fireworks-stop}{}}}
 \subsection{Method \code{stop()}}{
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Fireworks$stop()}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Fireworks$stop(fadeOut = FALSE)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{fadeOut}}{Whether to fade out the fireworks before stopping. Note that
+this will take 2000ms to complete.}
+}
+\if{html}{\out{</div>}}
+}
 \subsection{Details}{
 Stop the fireworks
 }
