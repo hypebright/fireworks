@@ -140,7 +140,7 @@ By default, fireworks are removed immediately when `stop` is called. You can add
 fw$stop(fadeOut = TRUE)
 ```
 
-The effects takes 2000ms and looks changes the intensity of the fireworks down to 1:
+The effects takes 2000ms and changes the intensity of the fireworks to `1`:
 
 ![](./inst/images/fireworks-fadeout.gif)
 
