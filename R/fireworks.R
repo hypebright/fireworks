@@ -59,7 +59,7 @@ fireworks <- function(id, width = "100%", height = "400px", options = list()) {
 #' @import R6
 #' @export
 Fireworks <- R6::R6Class(
-  "fireworks",
+  "Fireworks",
   public = list(
     #' @details
     #' Create fireworks.
