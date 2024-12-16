@@ -11,3 +11,4 @@
 ^esbuild\.dev\.js$
 ^esbuild\.prod\.js$
 ^\.github$
+^inst/images$
